@@ -105,7 +105,7 @@ if __name__ == '__main__':
     parser = ap.ArgumentParser(prog='HDFView', description='Generate a xdmf file to view HDF file.')
     parser.add_argument(
                         '-p', '--path',                # Option Name
-                        required='True',               # Requirement
+                        required='False',               # Requirement
                         help='Type the Path',          # Help log
                         metavar='Path',                # [-p path]
                         default='.'
