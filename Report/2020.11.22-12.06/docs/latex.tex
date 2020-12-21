@@ -1,0 +1,73 @@
+\section{The First LaTex Report}
+In the aspect of learning latex, we mainly study the basic knowledge of latex, such as latex terms and some commands. For example, write the first "Hello world" in latex. Then we have some understanding of report-xi.cls.And we made some changes to the template "energy budget of channel flow simulation"
+\subsection{insert picture function}
+First of all, we have a basic understanding of anaconda. We write "Hello world" with the code in latex learning manual and compile the output. The results are as follows.(The letters in the presentation may be a little small)
+\begin{figure}[htbp]
+\centering
+    \subfigure[Exhibition]{\includegraphics[width=0.35\textwidth]{src/helloworld.pdf}}
+ \caption{Hello world}
+\label{pd}
+\end{figure}
+
+
+
+\subsection{Writing formula function,N-S equation}
+This part is mainly used to test the written formula. The following mainly shows the N-S equation.
+\begin{equation}
+\begin{aligned}
+\frac{D\vec{U}}{Dt}=-\frac{1}{\rho}\vec{\nabla}P+\nu\nabla^2\vec{U}
+\end{aligned}
+\end{equation}
+
+\begin{equation}
+\left\{
+\begin{aligned}
+\frac{\partial u_{1}}{\partial t}+u_{i}\frac{\partial u_{1}}{\partial x_{i}}=-\frac{1}{\rho}\frac{\partial p}{\partial x_{1}}+\nu\frac{\partial^2 u_{1}}{\partial x_{i} \partial x_{i}}\\
+\frac{\partial u_{2}}{\partial t}+u_{i}\frac{\partial u_{2}}{\partial x_{i}}=-\frac{1}{\rho}\frac{\partial p}{\partial x_{2}}+\nu\frac{\partial^2 u_{2}}{\partial x_{i} \partial x_{i}}\\
+\frac{\partial u_{3}}{\partial t}+u_{i}\frac{\partial u_{3}}{\partial x_{i}}=-\frac{1}{\rho}\frac{\partial p}{\partial x_{3}}+\nu\frac{\partial^2 u_{3}}{\partial x_{i} \partial x_{i}} 
+\end{aligned}
+\right.
+\end{equation}
+
+Formula (1) can also be expressed as follows
+\begin{equation}
+\begin{aligned}
+\frac{\partial U_{j}}{\partial t}+U_{i}\frac{\partial U_{j}}{\partial x_{i}}=-\frac{1}{\rho}\frac{\partial P}{\partial x_{i}}+\nu\frac{\partial^2 U_{j}}{\partial x_{i}\partial x_{i}}
+\end{aligned}
+\end{equation}
+
+According to the continuity equation,the left side of Equation 3 can be expressed as
+\begin{equation}
+\begin{aligned}
+\frac{\partial U_{j}}{\partial t}+U_{i}\frac{\partial U_{j}}{\partial x_{i}}=\frac{\partial U_{j}}{\partial t}+\frac{\partial U_{i}U_{j}}{\partial x_{i}}-U_{j}\frac{\partial U_{i}}{\partial x_{i}}\\
+\frac{\partial U_{i}}{\partial x_{i}}=0\\
+\frac{\partial U_{j}}{\partial t}+U_{i}\frac{\partial U_{j}}{\partial x_{i}}=\frac{\partial U_{j}}{\partial t}+\frac{\partial U_{i}U_{j}}{\partial x_{i}}
+\end{aligned}
+\end{equation}
+
+The instantaneous value is equal to the average value plus the fluctuation value,As shown below.
+\begin{equation}
+\begin{aligned}
+U_{i}=<u_{i}>+u_{i}\\
+P=\langle P \rangle+p
+\end{aligned}
+\end{equation}
+
+
+Put the result of equation 4 into equation 3, and then average.
+\begin{equation}
+\begin{aligned}
+<\frac{DU_{i}}{Dt}>=\frac{\partial <U_{j}>}{\partial t}+\frac{\partial <U_{i}U_{j}>}{\partial x_{i}}=-\frac{1}{\rho}\frac{\partial <P>}{\partial x_{i}}+\nu\frac{\partial^2 <U_{j}>}{\partial x_{i}\partial x_{i}}\\
+\frac{\partial <U_{i}U_{j}>}{\partial x_{i}}=\frac{\partial <U_{i}><U_{j}>}{\partial x_{i}}+\frac{\partial <u_{i}u_{j}>}{\partial x_{i}}=<U_{i}>\frac{\partial <U_{j}>}{\partial <x_{i}>}+\frac{\partial <u_{i}u_{j}>}{\partial x_{i}}
+\end{aligned}
+\end{equation}
+
+
+
+
+
+
+
+
+
+
