@@ -1,0 +1,129 @@
+\section{The Basics of git}
+Over the course of these two weeks, we learned the basic commands of Git and install lazygit on our computer.
+\subsection{Install Git}
+    sudo apt install git-all\\
+\subsection{Configure and initialize a repository}
+    cd CTC
+    
+    mkdir learngit
+    
+    cd learngit
+    
+    #"git init" can make "learngit" a repository that git can manage;this is a empty Git repository#
+   
+    git init 
+\subsection{Add file to repository}
+    gedit
+    
+    (Git is a version control system.
+    
+    Git is free software.)Save file as readme.txt
+    
+    git add readme.txt
+    
+    #-m is followed by a description of this submission#
+    
+    git commit -m "wrote a readme file"
+\subsection{modify the content of readme.txt }
+    (Git is a distributed version control system.
+    
+    Git is free software.)
+    
+    git status 
+    
+    (Changes not staged for commit:
+    
+    (use "git add <file>..." to update what will be committed)
+    
+    (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   readme.txt\\
+
+    no changes added to commit (use "git add" and/or "git commit -a"))
+    
+    #For viewing readme.txt What are the specific changes#
+    
+    git diff readme.txt 
+    
+    (diff --git a/readme.txt b/readme.txt
+    
+    index 46d49bf..9247db6 100644
+    
+    --- a/readme.txt
+    
+    +++ b/readme.txt
+    
+    @@ -1,2 +1,2 @@
+    
+    -Git is a version control system.
+    
+    +Git is a distributed version control system.
+    
+    Git is free software.)
+    
+    #Then repeat step 3 add new file to repository#
+\subsection{View history}
+    git log
+    
+    (commit d4b92af957beb5567d3e736c79af54a6a308062d (HEAD -> master)
+    
+    Author: cch <cch@debian.cch>
+    
+    Date:   Tue Dec 15 21:52:41 2020 +0800
+    
+
+    append GPL
+    
+
+    commit 8e596ca8027371c31f154160c080c713dc49e476
+    
+    Author: cch <cch@debian.cch>
+    
+    Date:   Tue Dec 15 20:53:37 2020 +0800
+    
+    add distributed
+
+    commit cf6e4e01ede9660b0177c183ae3b9518951219b6
+    
+    Author: cch <cch@debian.cch>
+    
+    Date:   Tue Dec 15 20:45:31 2020 +0800
+
+    wrote a readme file)
+    
+    #We want to roll back the current version of "append GPL" to the previous version of "add distributed"
+    
+    git reset --hard HEAD^ (HEAD^X X stands for version number)
+    
+    git reset --hard d4b92af (Go back to the corresponding version)
+    
+    git reflog (The command git reflog is used to record every command you make)
+\subsection{Working Directory" and "Repository}
+The "git add" command actually puts all the changes to be committed into the stage, and then executes "git commit" to commit all the changes in the staging area to the branch at one time.
+
+For each modification, if you do not add it to the staging area, it will not be added to the commit.
+\subsection{Revoking the amendment}
+"git checkout -- file "can discard changes to the workspace
+
+The command "git reset head file" can un stage the modification of the temporary storage area and put it back into the workspace
+\subsection{Delete file}
+rm test.txt (delete files in the folder)
+
+git rm test.txt (delete files in the repository)
+
+git checkout -- test.txt (Restore the deleted files to the latest version)
+\subsection{"git push" and "git pull"}
+\subsection{Create and merge branches}
+View branch: git branch
+
+Create branch: git branch < name > 
+
+Switch branches: git checkout < name > 
+
+Create + switch branch: git checkout - b < name >
+
+Merge a branch to the current branch: git merge < name > 
+
+Delete branch: git branch - d < name > 
+
+
