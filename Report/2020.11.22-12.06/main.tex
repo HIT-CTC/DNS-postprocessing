@@ -1,11 +1,16 @@
+% Comments
+% 1. Please replace all < to \langle and > to \rangle
+% The best way to do this is 
+% 'sed 's/</\\langle/g' *.tex'
+% Try this on your own computer.
+% See more details using 'curl cheat.sh/sed' or 'man sed'
+% 2. Please write this together with Git.
+% 3. I just need *.tex and *.pdf, don't upload other things!
 \documentclass{report_xi}
-\graphicspath{{src/}}
+\graphicspath{src/}
 \input{./docs/information}
 \begin{document}
-\maketitle
-\pagestyle{plain}
 \input{docs/preface.tex}
 \input{docs/latex.tex}
 \input{docs/python.tex}
-\bibliography{cite}
 \end{document}

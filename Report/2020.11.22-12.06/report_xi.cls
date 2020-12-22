@@ -4,11 +4,11 @@
 % Make my code clean and neat.
 % Keep modest and keep updating.
 % Author: Lingchu Xi
-% Version: 0.2.0
-% Date: 2020-10-27
+% Version: 0.3.0
+% Date: 2020-11-23
 %-------------------------------------------------------------------
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{report_xi}[2020/10/27 v0.2.0 Help you write your report easier.]
+\ProvidesClass{report_xi}[2020/11/23 v0.3.0 Add a color box for code.]
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessOptions\relax
 
@@ -29,6 +29,7 @@
 \RequirePackage{tikz}
 \RequirePackage{tikz-3dplot}
 \RequirePackage{epstopdf}
+\RequirePackage{xcolor}
 %-------- Geometry And Sturcture --------%
 \RequirePackage[margin=1in, headsep=.2in, headheight=2in]{geometry}
 \RequirePackage{float}
@@ -38,6 +39,13 @@
 %------------- Fonts Setting -------------%
 \RequirePackage{fontspec}
 \setmainfont{Times New Roman}
+%--------------- Citation ---------------%
+\RequirePackage{natbib}
+\bibliographystyle{unsrt}
+\newcommand{\upcite}[1]{\textsuperscript{\textsuperscript{\cite{#1}}}}
+%--------------- Colorboxs ---------------%
+\RequirePackage{tcolorbox}
+\tcbuselibrary{theorems, listings, skins, breakable}
 %--------------- Hyperref ---------------%
 \RequirePackage{hyperref}
 
@@ -89,3 +97,56 @@
 %-----------------------------------------%
 \renewcommand{\baselinestretch}{1.2}
 \setlength{\parindent}{1em}
+%----------------------------------------%
+%---------- Auto Title And Bib ----------%
+%----------------------------------------%
+\AtBeginDocument{
+    \maketitle
+    \pagestyle{plain}
+}
+% Bib
+\AtEndDocument{
+    \bibliography{docs/cite}
+}
+%----------------------------------------%
+%-------------- Code Style --------------%
+%----------------------------------------%
+\newcounter{listings}
+\definecolor{bg}{RGB}{232 232 232}
+\definecolor{bf}{RGB}{156 156 156}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\definecolor{pblue}{rgb}{0.13,0.13,1}
+\newtcblisting{codebox}[3][default]{
+    theorem={Listing}{listings}{#2}{#3},
+    fonttitle=\scriptsize\bfseries,
+    colback=bg,
+    colframe=bf,
+    enhanced,
+    listing only,
+    breakable,
+    listing options={
+        language=#1,
+        keywordstyle=\bfseries\color{pblue},
+        stringstyle=\bfseries\itshape\color{green!40!black},
+        commentstyle=\bfseries\itshape\color{black!60},
+        % commentstyle=\color{codegreen},
+        % keywordstyle=\color{magenta},
+        % numberstyle=\tiny\color{codegray},
+        % stringstyle=\color{codepurple},
+        basicstyle=\ttfamily\footnotesize,
+        numbers=left,
+        numbersep=2mm,
+        showspaces=false,
+        showtabs=false,
+        breaklines=true,
+        showstringspaces=false,
+        tabsize=1
+    },
+        overlay={
+        \begin{tcbclipinterior}
+            \fill[gray!25] (frame.south west) rectangle ([xshift=4mm]frame.north west);
+        \end{tcbclipinterior}}
+}

@@ -2,10 +2,14 @@
 In the aspect of learning latex, we mainly study the basic knowledge of latex, such as latex terms and some commands. For example, write the first "Hello world" in latex. Then we have some understanding of report-xi.cls.And we made some changes to the template "energy budget of channel flow simulation"
 \subsection{insert picture function}
 First of all, we have a basic understanding of anaconda. We write "Hello world" with the code in latex learning manual and compile the output. The results are as follows.(The letters in the presentation may be a little small)
+% 1. The figure input in latex should be use standalone!
+% 2. You need to try to use another pdf to test.
 \begin{figure}[htbp]
 \centering
-    \subfigure[Exhibition]{\includegraphics[width=0.35\textwidth]{src/helloworld.pdf}}
- \caption{Hello world}
+% Why you use subfigure here, you don't have subfigure
+    \includegraphics[width=0.3\textwidth\textwidth]{src/helloworld.pdf}
+%    \subfigure[Exhibition]{\includegraphics[width=0.35\textwidth]{src/helloworld.pdf}}
+\caption{Hello world}
 \label{pd}
 \end{figure}
 
@@ -48,7 +52,7 @@ According to the continuity equation,the left side of Equation 3 can be expresse
 The instantaneous value is equal to the average value plus the fluctuation value,As shown below.
 \begin{equation}
 \begin{aligned}
-U_{i}=<u_{i}>+u_{i}\\
+U_{i}=\langle u_{i}\rangle +u_{i}\\
 P=\langle P \rangle+p
 \end{aligned}
 \end{equation}
@@ -57,8 +61,8 @@ P=\langle P \rangle+p
 Put the result of equation 4 into equation 3, and then average.
 \begin{equation}
 \begin{aligned}
-<\frac{DU_{i}}{Dt}>=\frac{\partial <U_{j}>}{\partial t}+\frac{\partial <U_{i}U_{j}>}{\partial x_{i}}=-\frac{1}{\rho}\frac{\partial <P>}{\partial x_{i}}+\nu\frac{\partial^2 <U_{j}>}{\partial x_{i}\partial x_{i}}\\
-\frac{\partial <U_{i}U_{j}>}{\partial x_{i}}=\frac{\partial <U_{i}><U_{j}>}{\partial x_{i}}+\frac{\partial <u_{i}u_{j}>}{\partial x_{i}}=<U_{i}>\frac{\partial <U_{j}>}{\partial <x_{i}>}+\frac{\partial <u_{i}u_{j}>}{\partial x_{i}}
+\langle \frac{DU_{i}}{Dt}\rangle =\frac{\partial \langle U_{j}\rangle }{\partial t}+\frac{\partial \langle U_{i}U_{j}\rangle }{\partial x_{i}}=-\frac{1}{\rho}\frac{\partial \langle P\rangle }{\partial x_{i}}+\nu\frac{\partial^2 \langle U_{j}\rangle }{\partial x_{i}\partial x_{i}}\\
+\frac{\partial \langle U_{i}U_{j}\rangle }{\partial x_{i}}=\frac{\partial \langle U_{i}\rangle \langle U_{j}\rangle }{\partial x_{i}}+\frac{\partial \langle u_{i}u_{j}\rangle }{\partial x_{i}}=\langle U_{i}\rangle \frac{\partial \langle U_{j}\rangle }{\partial \langle x_{i}\rangle }+\frac{\partial \langle u_{i}u_{j}\rangle }{\partial x_{i}}
 \end{aligned}
 \end{equation}
 
