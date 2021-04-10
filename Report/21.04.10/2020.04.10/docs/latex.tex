@@ -1,0 +1,141 @@
+\section{The data calculation process}
+\subsection{logon workstation}
+ssh yh@10.249.183.158
+\subsection{preparation}
+\subsubsection{Change program parameters}
+Enter (vi run.sh) review the program and change the necessary parameters.
+\subsubsection{}
+Enter (make) to determine the changed parameters.
+\subsection{Data calculation}
+\subsubsection{Start a new process}
+screen
+\subsubsection{Run the script and output}
+./run.sh > output.txt  \&
+\subsubsection{Background operation}
+ctrl a + ctrl d
+\subsection{Query data file}
+Enter(tail -f output.txt) and then obtion the avg.h5 file.
+
+\section{data processing}
+Enter ./output.py -h to get the program help.
+
+\section{gunplot}
+Use gnuplot to draw the figure of the data.
+\begin{figure}[htbp]
+\centering
+    \subfigure{\includegraphics[width=0.35\textwidth]{src/u_sym.pdf}}
+ \caption{Mean-velocity profiles,upper wall-purple line,lower wall-green line}
+\label{pd}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+    \subfigure{\includegraphics[width=0.35\textwidth]{src/uu_sym.pdf}}
+ \caption{Mean-velocity profiles,upper wall-purple line,lower wall-green line}
+\label{pd}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+    \subfigure{\includegraphics[width=0.35\textwidth]{src/uw_sym.pdf}}
+ \caption{Mean-velocity profiles,upper wall-purple line,lower wall-green line}
+\label{pd}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+    \subfigure{\includegraphics[width=0.35\textwidth]{src/uz_sym.pdf}}
+ \caption{Mean-velocity profiles,upper wall-purple line,lower wall-green line}
+\label{pd}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+    \subfigure{\includegraphics[width=0.35\textwidth]{src/v_sym.pdf}}
+ \caption{Mean-velocity profiles,upper wall-purple line,lower wall-green line}
+\label{pd}
+\end{figure}
+
+
+\begin{figure}[H]
+\centering
+    \subfigure{\includegraphics[width=0.35\textwidth]{src/vv_sym.pdf}}
+ \caption{Mean-velocity profiles,upper wall-purple line,lower wall-green line}
+\label{pd}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+    \subfigure{\includegraphics[width=0.35\textwidth]{src/w_sym.pdf}}
+ \caption{Mean-velocity profiles,upper wall-purple line,lower wall-green line}
+\label{pd}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+    \subfigure{\includegraphics[width=0.35\textwidth]{src/ww_sym.pdf}}
+ \caption{Mean-velocity profiles,upper wall-purple line,lower wall-green line}
+\label{pd}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+    \subfigure{\includegraphics[width=0.35\textwidth]{src/u_sym.pdf}}
+ \caption{Mean-velocity profiles,upper wall-purple line,lower wall-green line}
+\label{pd}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+    \subfigure{\includegraphics[width=0.35\textwidth]{src/w.pdf}}
+ \caption{Mean-velocity profiles,w_{rms}-puper line}
+\label{pd}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+    \subfigure{\includegraphics[width=0.35\textwidth]{src/ww.pdf}}
+ \caption{Mean-velocity profiles,ww_{rms}-puper line}
+\label{pd}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+    \subfigure{\includegraphics[width=0.35\textwidth]{src/z_u.pdf}}
+ \caption{Mean-velocity profiles,u_{rms}-puper line}
+\label{pd}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+    \subfigure{\includegraphics[width=0.35\textwidth]{src/z_uu.pdf}}
+ \caption{Mean-velocity profiles,uu_{rms}-puper line}
+\label{pd}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+    \subfigure{\includegraphics[width=0.35\textwidth]{src/z_uw.pdf}}
+ \caption{Mean-velocity profiles,uw_{rms}-puper line}
+\label{pd}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+    \subfigure{\includegraphics[width=0.35\textwidth]{src/z_uz.pdf}}
+ \caption{Mean-velocity profiles,uz_{rms}-puper line}
+\label{pd}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+    \subfigure{\includegraphics[width=0.35\textwidth]{src/z_ww.pdf}}
+ \caption{Mean-velocity profiles,ww_{rms}-puper line}
+\label{pd}
+\end{figure}
+
+\vfill
+
+
+
+
